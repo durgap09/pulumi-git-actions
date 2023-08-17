@@ -71,10 +71,10 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
 
-      - name: Pulumi UP
+      - name: Pulumi destroy
         uses: pulumi/actions@v3
         with:
-          command: up
+          command: destroy
           stack-name: ${{ env.PULUMI_STACK_NAME }}
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
