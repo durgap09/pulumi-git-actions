@@ -1,4 +1,4 @@
-name: git-2
+name: qa-pul
 runtime:
   name: nodejs
   options:
