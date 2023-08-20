@@ -6,7 +6,7 @@
             "figure": "RoundedRectangle",
             "otherName": "test-1",
             "canvasState": "editIcon",
-            "picLight": "https://qcloud.dev.appmodz.net/api/images/light/null",
+            "picLight": "https://qcloud.dev.appmodz.net/api/images/light/AWS VPC Service.png",
             "viewName": "Vpc",
             "size": "100 auto",
             "fill": "lightgray",
@@ -56,7 +56,7 @@
             "figure": "RoundedRectangle",
             "otherName": "sub-1",
             "canvasState": "editIcon",
-            "picLight": "https://qcloud.dev.appmodz.net/api/images/light/null",
+            "picLight": "https://qcloud.dev.appmodz.net/api/images/light/AWS_Subnet.png",
             "viewName": "Subnet",
             "size": "100 auto",
             "fill": "lightgray",
@@ -65,7 +65,7 @@
                     "portColor": "#9c0202",
                     "portTitle": "availabilityZoneId",
                     "portId": "port-availabilityZoneId",
-                    "componentKey": 358
+                    "componentKey": 127
                 }
             ],
             "topArray": [
@@ -497,7 +497,7 @@
                     "isVisible": true,
                     "propertyCreatedOn": "2022-09-02T12:46:08.772+00:00",
                     "propertyUpdatedOn": "2022-11-15T10:32:33.295+00:00",
-                    "value": "us-west-2a",
+                    "value": "us-east-2a",
                     "dataType": "string"
                 }
             ]
@@ -565,7 +565,7 @@
                     "dataType": "string",
                     "hint": "The AZ for the subnet.",
                     "appmodzName": "availabilityZone",
-                    "value": "us-west-2a"
+                    "value": "us-east-2a"
                 }
             ]
         }
@@ -574,7 +574,25 @@
         {
             "type": "success",
             "text": "Save Executed",
-            "time": "08-20-2023 08:42 pm",
+            "time": "08-20-2023 08:46 pm",
+            "content": "stack Initialized"
+        },
+        {
+            "type": "error",
+            "text": "Error Occurred while Planning",
+            "time": "2023-08-20T15:12:41.361+00:00",
+            "content": "\nCommandError: code: -2\n stdout: \n stderr: Command failed with exit code 255: pulumi refresh --yes --skip-preview --exec-kind auto.inline --stack test-add --non-interactive\nRefreshing (test-add)\n\nView Live: https://app.pulumi.com/durgaprasad9/ws-1/test-add/updates/3\n\n\n ~  pulumi:pulumi:Stack ws-1-test-add refreshing (0s) \n    pulumi:pulumi:Stack ws-1-test-add running \n ~  aws:ec2:Vpc test-1id366 refreshing (0s) \n@ Refreshing......\n ~  aws:ec2:Vpc test-1id366 refreshing (3s) error: 1 error occurred:\n ~  aws:ec2:Vpc test-1id366 **refreshing failed** error: 1 error occurred:\n    pulumi:pulumi:Stack ws-1-test-add running error: update failed\n    pulumi:pulumi:Stack ws-1-test-add **failed** 1 error\n\nDiagnostics:\n  pulumi:pulumi:Stack (ws-1-test-add):\n    error: update failed\n\n  aws:ec2:Vpc (test-1id366):\n    error: 1 error occurred:\n    \t* missing required configuration key \"aws:region\": The region where AWS operations will take place. Examples are [secret], us-west-2, etc.\n    Set a value using the command `pulumi config set aws:region <value>`.\n\nResources:\n    1 unchanged\n\nDuration: 4s\n\n err?: Error: Command failed with exit code 255: pulumi refresh --yes --skip-preview --exec-kind auto.inline --stack test-add --non-interactive\nRefreshing (test-add)\n\nView Live: https://app.pulumi.com/durgaprasad9/ws-1/test-add/updates/3\n\n\n ~  pulumi:pulumi:Stack ws-1-test-add refreshing (0s) \n    pulumi:pulumi:Stack ws-1-test-add running \n ~  aws:ec2:Vpc test-1id366 refreshing (0s) \n@ Refreshing......\n ~  aws:ec2:Vpc test-1id366 refreshing (3s) error: 1 error occurred:\n ~  aws:ec2:Vpc test-1id366 **refreshing failed** error: 1 error occurred:\n    pulumi:pulumi:Stack ws-1-test-add running error: update failed\n    pulumi:pulumi:Stack ws-1-test-add **failed** 1 error\n\nDiagnostics:\n  pulumi:pulumi:Stack (ws-1-test-add):\n    error: update failed\n\n  aws:ec2:Vpc (test-1id366):\n    error: 1 error occurred:\n    \t* missing required configuration key \"aws:region\": The region where AWS operations will take place. Examples are [secret], us-west-2, etc.\n    Set a value using the command `pulumi config set aws:region <value>`.\n\nResources:\n    1 unchanged\n\nDuration: 4s\n\n\nGit Response:\n\nCommit Result: \nCommit Id: b1bd7830c10a6fa0835fa9948076f7bfe898b9f2 \nBranch: ws-1/test-add \nChanges: 1 \nInsertions: 368 \nDeletions: 2\n\n\nGit Response:\n\nCommit Result: \nCommit Id: b1bd7830c10a6fa0835fa9948076f7bfe898b9f2 \nBranch: ws-1/test-add \nChanges: 1 \nInsertions: 368 \nDeletions: 2\n\nPush Result: \nSuccessfully Pushed To https://github.com/durgap09/pulumi-git-actions.git"
+        },
+        {
+            "type": "success",
+            "text": "Validate Executed",
+            "time": "2023-08-20T15:12:30.457+00:00",
+            "content": "Valid Syntax"
+        },
+        {
+            "type": "success",
+            "text": "Save Executed",
+            "time": "2023-08-20T15:12:27.154+00:00",
             "content": "stack Initialized"
         },
         {
@@ -600,6 +618,30 @@
         {
             "name": "Save",
             "action": "success"
+        },
+        {
+            "name": "Plan",
+            "action": "error"
+        },
+        {
+            "name": "Plan",
+            "action": "warning"
+        },
+        {
+            "name": "Validate",
+            "action": "success"
+        },
+        {
+            "name": "Validate",
+            "action": "warning"
+        },
+        {
+            "name": "Save",
+            "action": "success"
+        },
+        {
+            "name": "Save",
+            "action": "warning"
         },
         {
             "name": "Plan",
