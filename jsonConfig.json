@@ -49,9 +49,80 @@
             "isInterface": false,
             "key1": -4,
             "loc": "-240 -150"
+        },
+        {
+            "key": 358,
+            "name": "Subnet",
+            "figure": "RoundedRectangle",
+            "otherName": "sub-1",
+            "canvasState": "editIcon",
+            "picLight": "https://qcloud.dev.appmodz.net/api/images/light/null",
+            "viewName": "Subnet",
+            "size": "100 auto",
+            "fill": "lightgray",
+            "leftArray": [
+                {
+                    "portColor": "#9c0202",
+                    "portTitle": "availabilityZoneId",
+                    "portId": "port-availabilityZoneId",
+                    "componentKey": 358
+                }
+            ],
+            "topArray": [
+                {
+                    "portColor": "#4c9126",
+                    "portTitle": "connection",
+                    "portId": "port-connection",
+                    "fromLinkable": true,
+                    "toLinkable": false
+                },
+                {
+                    "portColor": "#8f8801",
+                    "portTitle": "dynamicConnection",
+                    "portId": "port-dynamicConnection",
+                    "fromLinkable": false,
+                    "toLinkable": true
+                }
+            ],
+            "topYellowArray": [],
+            "bottomArray": [],
+            "rightArray": [
+                {
+                    "portColor": "#9c0202",
+                    "portTitle": "vpcId",
+                    "portId": "port-vpcId"
+                }
+            ],
+            "visible": true,
+            "componentId": 358179,
+            "componentCategory": {
+                "componentCategoryId": 78,
+                "componentCategoryName": "ec2",
+                "cloudPlatform": {
+                    "cloudPlatformId": 10,
+                    "cloudPlatformName": "aws",
+                    "cloudPlatformAppmodzName": "aws",
+                    "cloudPlatformPulumiLibrary": "@pulumi/aws",
+                    "cloudPlatformCreatedOn": "2022-07-13T11:32:27.913+00:00",
+                    "cloudPlatformUpdatedOn": "2022-07-13T11:32:27.913+00:00"
+                },
+                "componentCategoryCreatedOn": "2022-07-14T13:30:34.662+00:00",
+                "componentCategoryUpdatedOn": "2022-07-14T13:30:34.662+00:00"
+            },
+            "isInterface": false,
+            "key1": -7,
+            "loc": "-180 110"
         }
     ],
-    "connections": [],
+    "connections": [
+        {
+            "from": 366,
+            "to": 358,
+            "fromPort": "port-connection",
+            "toPort": "port-vpcId",
+            "key": -1
+        }
+    ],
     "completeProperties": [
         {
             "key": 366,
@@ -213,6 +284,223 @@
                     "dataType": "string"
                 }
             ]
+        },
+        {
+            "key": 358,
+            "name": "Subnet",
+            "properties": [
+                {
+                    "id": 283971,
+                    "name": "mapCustomerOwnedIpOnLaunch",
+                    "hint": "Specify `true` to indicate that network interfaces created in the subnet should be assigned a customer owned IP address. The `customerOwnedIpv4Pool` and `outpostArn` arguments must be specified when set to `true`. Default is `false`.",
+                    "appmodzName": "mapCustomerOwnedIpOnLaunch",
+                    "type": "boolean",
+                    "interfaceName": null,
+                    "interfaceNamespace": null,
+                    "interfaceModule": null,
+                    "expectsInterface": false,
+                    "isConnectable": false,
+                    "isMandatory": false,
+                    "isVisible": true,
+                    "propertyCreatedOn": "2022-09-02T12:46:08.776+00:00",
+                    "propertyUpdatedOn": "2022-11-15T10:32:33.296+00:00",
+                    "dataType": "boolean"
+                },
+                {
+                    "id": 283972,
+                    "name": "mapPublicIpOnLaunch",
+                    "hint": "Specify true to indicate\nthat instances launched into the subnet should be assigned\na public IP address. Default is `false`.",
+                    "appmodzName": "mapPublicIpOnLaunch",
+                    "type": "boolean",
+                    "interfaceName": null,
+                    "interfaceNamespace": null,
+                    "interfaceModule": null,
+                    "expectsInterface": false,
+                    "isConnectable": false,
+                    "isMandatory": false,
+                    "isVisible": true,
+                    "propertyCreatedOn": "2022-09-02T12:46:08.776+00:00",
+                    "propertyUpdatedOn": "2022-11-15T10:32:33.296+00:00",
+                    "dataType": "boolean"
+                },
+                {
+                    "id": 283973,
+                    "name": "outpostArn",
+                    "hint": "The Amazon Resource Name (ARN) of the Outpost.",
+                    "appmodzName": "outpostArn",
+                    "type": "string",
+                    "interfaceName": null,
+                    "interfaceNamespace": null,
+                    "interfaceModule": null,
+                    "expectsInterface": false,
+                    "isConnectable": false,
+                    "isMandatory": false,
+                    "isVisible": true,
+                    "propertyCreatedOn": "2022-09-02T12:46:08.777+00:00",
+                    "propertyUpdatedOn": "2022-11-15T10:32:33.296+00:00",
+                    "dataType": "string"
+                },
+                {
+                    "id": 283974,
+                    "name": "tags",
+                    "hint": "A map of tags to assign to the resource. .If configured with a provider `defaultTags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+                    "appmodzName": "tags",
+                    "type": "map",
+                    "interfaceName": null,
+                    "interfaceNamespace": null,
+                    "interfaceModule": null,
+                    "expectsInterface": false,
+                    "isConnectable": false,
+                    "isMandatory": false,
+                    "isVisible": true,
+                    "propertyCreatedOn": "2022-09-02T12:46:08.777+00:00",
+                    "propertyUpdatedOn": "2022-11-15T10:32:33.297+00:00",
+                    "dataType": "map"
+                },
+                {
+                    "id": 283975,
+                    "name": "vpcId",
+                    "hint": "The VPC ID.",
+                    "appmodzName": "vpcId",
+                    "type": "text",
+                    "interfaceName": null,
+                    "interfaceNamespace": null,
+                    "interfaceModule": null,
+                    "expectsInterface": false,
+                    "isConnectable": true,
+                    "isMandatory": true,
+                    "isVisible": true,
+                    "propertyCreatedOn": "2022-09-02T12:46:08.778+00:00",
+                    "propertyUpdatedOn": "2022-11-15T10:32:33.297+00:00",
+                    "otherType": "text",
+                    "options": null,
+                    "dataType": "text"
+                },
+                {
+                    "id": 283976,
+                    "name": "name",
+                    "hint": null,
+                    "appmodzName": "name",
+                    "type": "string",
+                    "interfaceName": null,
+                    "interfaceNamespace": null,
+                    "interfaceModule": null,
+                    "expectsInterface": null,
+                    "isConnectable": false,
+                    "isMandatory": null,
+                    "isVisible": true,
+                    "propertyCreatedOn": "2022-09-02T12:46:08.779+00:00",
+                    "propertyUpdatedOn": "2022-11-15T10:32:33.297+00:00",
+                    "value": "sub-1",
+                    "dataType": "string"
+                },
+                {
+                    "id": 283965,
+                    "name": "assignIpv6AddressOnCreation",
+                    "hint": "Specify true to indicate\nthat network interfaces created in the specified subnet should be\nassigned an IPv6 address. Default is `false`",
+                    "appmodzName": "assignIpv6AddressOnCreation",
+                    "type": "boolean",
+                    "interfaceName": null,
+                    "interfaceNamespace": null,
+                    "interfaceModule": null,
+                    "expectsInterface": false,
+                    "isConnectable": false,
+                    "isMandatory": false,
+                    "isVisible": true,
+                    "propertyCreatedOn": "2022-09-02T12:46:08.771+00:00",
+                    "propertyUpdatedOn": "2022-11-15T10:32:33.298+00:00",
+                    "dataType": "boolean"
+                },
+                {
+                    "id": 283967,
+                    "name": "availabilityZoneId",
+                    "hint": "The AZ ID of the subnet.",
+                    "appmodzName": "availabilityZoneId",
+                    "type": "text",
+                    "interfaceName": null,
+                    "interfaceNamespace": null,
+                    "interfaceModule": null,
+                    "expectsInterface": false,
+                    "isConnectable": true,
+                    "isMandatory": false,
+                    "isVisible": true,
+                    "propertyCreatedOn": "2022-09-02T12:46:08.774+00:00",
+                    "propertyUpdatedOn": "2022-11-15T10:32:33.298+00:00",
+                    "otherType": "text",
+                    "options": null,
+                    "dataType": "text"
+                },
+                {
+                    "id": 283968,
+                    "name": "cidrBlock",
+                    "hint": "The CIDR block for the subnet.",
+                    "appmodzName": "cidrBlock",
+                    "type": "string",
+                    "interfaceName": null,
+                    "interfaceNamespace": null,
+                    "interfaceModule": null,
+                    "expectsInterface": false,
+                    "isConnectable": false,
+                    "isMandatory": true,
+                    "isVisible": true,
+                    "propertyCreatedOn": "2022-09-02T12:46:08.774+00:00",
+                    "propertyUpdatedOn": "2022-11-15T10:32:33.298+00:00",
+                    "value": "121.0.0.0/24",
+                    "dataType": "string"
+                },
+                {
+                    "id": 283969,
+                    "name": "customerOwnedIpv4Pool",
+                    "hint": "The customer owned IPv4 address pool. Typically used with the `mapCustomerOwnedIpOnLaunch` argument. The `outpostArn` argument must be specified when configured.",
+                    "appmodzName": "customerOwnedIpv4Pool",
+                    "type": "string",
+                    "interfaceName": null,
+                    "interfaceNamespace": null,
+                    "interfaceModule": null,
+                    "expectsInterface": false,
+                    "isConnectable": false,
+                    "isMandatory": false,
+                    "isVisible": true,
+                    "propertyCreatedOn": "2022-09-02T12:46:08.774+00:00",
+                    "propertyUpdatedOn": "2022-11-15T10:32:33.299+00:00",
+                    "dataType": "string"
+                },
+                {
+                    "id": 283970,
+                    "name": "ipv6CidrBlock",
+                    "hint": "The IPv6 network range for the subnet,\nin CIDR notation. The subnet size must use a /64 prefix length.",
+                    "appmodzName": "ipv6CidrBlock",
+                    "type": "string",
+                    "interfaceName": null,
+                    "interfaceNamespace": null,
+                    "interfaceModule": null,
+                    "expectsInterface": false,
+                    "isConnectable": false,
+                    "isMandatory": false,
+                    "isVisible": true,
+                    "propertyCreatedOn": "2022-09-02T12:46:08.775+00:00",
+                    "propertyUpdatedOn": "2022-11-15T10:32:33.299+00:00",
+                    "dataType": "string"
+                },
+                {
+                    "id": 283966,
+                    "name": "availabilityZone",
+                    "hint": "The AZ for the subnet.",
+                    "appmodzName": "availabilityZone",
+                    "type": "string",
+                    "interfaceName": null,
+                    "interfaceNamespace": null,
+                    "interfaceModule": null,
+                    "expectsInterface": false,
+                    "isConnectable": false,
+                    "isMandatory": false,
+                    "isVisible": true,
+                    "propertyCreatedOn": "2022-09-02T12:46:08.772+00:00",
+                    "propertyUpdatedOn": "2022-11-15T10:32:33.295+00:00",
+                    "value": "us-west-2a",
+                    "dataType": "string"
+                }
+            ]
         }
     ],
     "properties": [
@@ -244,13 +532,67 @@
                     "value": "test-1"
                 }
             ]
+        },
+        {
+            "key": 358,
+            "name": "Subnet",
+            "properties": [
+                {
+                    "name": "tags",
+                    "dataType": "map",
+                    "hint": "A map of tags to assign to the resource. .If configured with a provider `defaultTags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+                    "appmodzName": "tags",
+                    "value": {
+                        "Name": "sub-1"
+                    }
+                },
+                {
+                    "name": "name",
+                    "dataType": "string",
+                    "hint": null,
+                    "appmodzName": "name",
+                    "value": "sub-1"
+                },
+                {
+                    "name": "cidrBlock",
+                    "dataType": "string",
+                    "hint": "The CIDR block for the subnet.",
+                    "appmodzName": "cidrBlock",
+                    "value": "121.0.0.0/24"
+                },
+                {
+                    "name": "availabilityZone",
+                    "dataType": "string",
+                    "hint": "The AZ for the subnet.",
+                    "appmodzName": "availabilityZone",
+                    "value": "us-west-2a"
+                }
+            ]
         }
     ],
     "message": [
         {
             "type": "success",
             "text": "Save Executed",
-            "time": "08-20-2023 08:29 pm",
+            "time": "08-20-2023 08:42 pm",
+            "content": "stack Initialized"
+        },
+        {
+            "type": "success",
+            "text": "Plan Executed",
+            "time": "2023-08-20T15:00:06.933+00:00",
+            "content": "Previewing update (test-add)\n\nView Live: https://app.pulumi.com/durgaprasad9/ws-1/test-add/previews/8189f765-7500-473c-9c9e-bfba4d7537b3\n\n@ Previewing update....\n\n +  pulumi:pulumi:Stack ws-1-test-add create \n@ Previewing update.....\n +  aws:ec2:Vpc test-1id366 create \n +  pulumi:pulumi:Stack ws-1-test-add create \n\nResources:\n    + 2 to create\n\n\nGit Response:\n\nCommit Result: \nCommit Id: 58ab329eee6e0d91f95cebfde76ce6c9c8642570 \nBranch: ws-1/test-add \nChanges: 2 \nInsertions: 611 \nDeletions: 0\n\n\nGit Response:\n\nCommit Result: \nCommit Id: 58ab329eee6e0d91f95cebfde76ce6c9c8642570 \nBranch: ws-1/test-add \nChanges: 2 \nInsertions: 611 \nDeletions: 0\n\nPush Result: \nSuccessfully Pushed To https://github.com/durgap09/pulumi-git-actions.git"
+        },
+        {
+            "type": "success",
+            "text": "Validate Executed",
+            "time": "2023-08-20T14:59:54.493+00:00",
+            "content": "Valid Syntax"
+        },
+        {
+            "type": "success",
+            "text": "Save Executed",
+            "time": "2023-08-20T14:59:52.651+00:00",
             "content": "stack Initialized"
         }
     ],
@@ -258,6 +600,30 @@
         {
             "name": "Save",
             "action": "success"
+        },
+        {
+            "name": "Plan",
+            "action": "success"
+        },
+        {
+            "name": "Plan",
+            "action": "warning"
+        },
+        {
+            "name": "Validate",
+            "action": "success"
+        },
+        {
+            "name": "Validate",
+            "action": "warning"
+        },
+        {
+            "name": "Save",
+            "action": "success"
+        },
+        {
+            "name": "Save",
+            "action": "warning"
         }
     ]
 }
